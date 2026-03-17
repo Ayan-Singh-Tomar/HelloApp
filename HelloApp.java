@@ -7,13 +7,16 @@ public class HelloApp {
         if (args.length > 0) {
 
             StringBuilder sb = new StringBuilder();
+            boolean first = true;
 
-            for (int i = 0; i < args.length; i++) {
-                sb.append(args[i]);
+            for (String n : args) {
 
-                if (i != args.length - 1) {
+                if (!first) {
                     sb.append(", ");
                 }
+
+                sb.append(n);
+                first = false;
             }
 
             name = sb.toString();
