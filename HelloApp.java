@@ -7,19 +7,15 @@ public class HelloApp {
         if (args.length > 0) {
 
             StringBuilder sb = new StringBuilder();
-            boolean first = true;
 
             for (String n : args) {
-
-                if (!first) {
-                    sb.append(", ");
-                }
-
-                sb.append(n);
-                first = false;
+                sb.append(n).append(", ");   // always add comma
             }
 
-            name = sb.toString();
+            // remove last ", "
+            if (sb.length() > 0) {
+                name = sb.substring(0, sb.length() - 2);
+            }
         }
 
         System.out.println("Hello, " + name + "!");
