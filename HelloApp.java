@@ -5,17 +5,7 @@ public class HelloApp {
         String name = "World";
 
         if (args.length > 0) {
-
-            StringBuilder sb = new StringBuilder();
-
-            for (String n : args) {
-                sb.append(n).append(", ");   // always add comma
-            }
-
-            // remove last ", "
-            if (sb.length() > 0) {
-                name = sb.substring(0, sb.length() - 2);
-            }
+            name = String.join(", ", args);
         }
 
         System.out.println("Hello, " + name + "!");
